@@ -17,8 +17,8 @@
 # Author:
 #   Morgan Wigmanich <okize123@gmail.com> (https://github.com/okize)
 
-images = require './data/images.json'
 jargon = require './data/triggers.json'
+responses = require './data/responses.json'
 
 removeTerm = (term, arrayToDeleteFrom) ->
   index = arrayToDeleteFrom.indexOf term
@@ -38,4 +38,4 @@ regex = new RegExp jargon.join('|'), 'gi'
 
 module.exports = (robot) ->
   robot.hear regex, (msg) ->
-    msg.send msg.random images
+    msg.send msg.random responses
